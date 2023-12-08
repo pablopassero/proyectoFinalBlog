@@ -1,0 +1,4 @@
+.py[co]
+.pyc
+*.jpg
+.sqlite3
