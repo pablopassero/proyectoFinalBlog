@@ -5,22 +5,51 @@
 <head>
 	<title>Cambio Climático</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+	<style>
 
+		
+		/* Clase CSS para los botones */
+		.boton {
+			padding: 10px;
+			background-color: #333;
+			color: white;
+			text-decoration: none;
+			border: none;
+			box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+			transition: transform 0.3s;
+	        
+			
+		}
+
+		/* Efecto al pasar el cursor */
+		.boton:hover {
+			transform: scale(1.1);
+		}
+	</style>
 </head>
 <body>
-	<h1 class="titulo">CAMBIO CLIMÁTICO</h1>
-	<img src="{% static 'img/cambio-climatico.jpg' %}" width="400px">
-	<ul>
-		<li><a href="{% url 'inicio' %}">Home</a></li>
-		<li><a href="{% url 'noticias:h_noticias' %}">Noticias</a> </li>
-		<li><a href="{% url 'informacion:h_informacion' %}">Información</a> </li>		
-		<li><a href="{% url 'causas:h_causas' %}">Causas</a> </li>
-		<li><a href="{% url 'consecuencias:h_consecuencias' %}">Consecuencias</a> </li>
-		<li><a href="{% url 'solucion:h_solucion' %}">Solución</a> </li>
-		<li><a href="{% url 'contacto' %}">Contacto</a>
-		</li>
+	<h1 class="titulo" style="color: green; text-align: center; font-size: 56px;">CAMBIO CLIMÁTICO</h1>
+	<img src="{% static 'img/cambio-climatico.jpg' %}" width="50%" style="object-fit: cover;" >
+	<div style="display: flex; justify-content: left; list-style: none; align-items: left; height: 40px;">
+		<a href="{% url 'inicio' %}" class="boton">Home</a>
+		<a href="{% url 'noticias:h_noticias' %}" class="boton">Noticias</a> 
+		<a href="{% url 'informacion:h_informacion' %}" class="boton">Información</a>		
+		<a href="{% url 'causas:h_causas' %}" class="boton">Causas</a> 
+		<a href="{% url 'consecuencias:h_consecuencias' %}" class="boton">Consecuencias</a> 
+		<a href="{% url 'solucion:h_solucion' %}" class="boton">Solución</a> 
+		<a href="{% url 'contacto' %}" class="boton">Contacto</a>
 
-	
+		{% if user.is_authenticated %}
+		
+			<a href="{% url 'logout'%}" class="boton">LOGOUT</a>
+		{% else %}
+			<a href="{% url 'login'%}" class="boton">LOGIN</a>
+			<a href="{% url 'usuarios:registro_usuario' %}" class="boton">REGISTRATE</a>
+		{% endif %}
+
+	</div>
+	<br><br><br><br>
+
 
 	{% block contenido %}
 
