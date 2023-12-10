@@ -1,4 +1,4 @@
-.py[co]
-.pyc
+*.py[co]
+*.pyc
 *.jpg
-.sqlite3
+*.sqlite3
