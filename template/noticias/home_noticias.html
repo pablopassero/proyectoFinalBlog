@@ -2,17 +2,20 @@
 
 
 {% block contenido %}
-	<h1>SOY EL HOME DE NOTICIAS</h1>
-
+<b><h1 style="text-align: center; background-color: lightblue; text-justify: inter-word; margin: 20px;">SECCIÓN DE NOTICIAS</h1></b>
+<br><br><br><br>
 	{{fecha}}
 
 	{% for n in noticias %}
 	<div>
 		<p><strong>TITULO:</strong>{{n.titulo}}</p>
-		<p><strong>CONTENIDO:</strong>{{n.contenido}}</p>
 		<p><img src="{{n.imagen.url}}" width="250px"></p>
+		<p><strong>CONTENIDO:</strong><p style="text-align: justify; margin: 30px;">{{n.contenido}}</p>
+		
 	</a>
 		</div> <br><br>
-
+<br><br><br><br><br>
 	{% endfor %}
+	<footer style="text-align: center; background-color: lightblue; margin: 20px;"><h3>Informatorio</h3></footer>
+	<br><br><br>
 {% endblock contenido %}
