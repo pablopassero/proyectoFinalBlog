@@ -32,14 +32,11 @@ urlpatterns = [
     path('informacion/', include('apps.informacion.urls')),
     path('causas/', include('apps.causas.urls')),
 
-     #APP USUARIOs
+    #APP USUARIOs
     path('Usuarios/', include('apps.usuarios.urls')),
 
     #LOGIN Y LOGOUT
     path('login/',auth.LoginView.as_view(template_name='usuarios/login.html'),name='login'),
     path('logout/',auth.LogoutView.as_view(),name="logout"),
 
-] 
-"""
-+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-"""
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
