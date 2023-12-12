@@ -25,4 +25,3 @@ class Noticia(models.Model):
 	def __str__(self):
 		return self.titulo
 
-		'''esto de arriba lo de horario si no me anda algo borralo pablo del pasado'''
