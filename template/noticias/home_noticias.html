@@ -10,7 +10,6 @@
 	<div>
 		<p><strong>TITULO:</strong>{{n.titulo}}</p>
 		<p><strong>CONTENIDO:</strong>{{n.contenido}}</p>
-<<<<<<< HEAD
 		<a href="{% url 'noticias:detalle_noticia' n.pk %}">
 		<p><img src="{{n.imagen.url}}" width="150px"></p>
 		</a>
@@ -18,11 +17,6 @@
 		<a href="{% url 'noticias:modificar_noticia' n.pk %}">Modificar</a>
 		<a href="{% url 'noticias:borrar_noticia' n.pk %}">Borrar</a>
 	</div><hr><hr>
-=======
-		<p><img src="{{n.imagen.url}}" width="250px"></p>
-	</a>
-		</div> <br><br>
->>>>>>> 44153ea4e5a98109987d83981a0304487e11cdc3
 
 	{% endfor %}
 {% endblock contenido %}
