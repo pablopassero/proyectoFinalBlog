@@ -10,11 +10,13 @@
 	<div>
 		<p><strong>TITULO:</strong>{{n.titulo}}</p>
 		<p><strong>CONTENIDO:</strong>{{n.contenido}}</p>
-		<p><img src="{{n.imagen.url}}" width="250px"></p>
-		<p><strong>CONTENIDO:</strong><p style="text-align: justify; margin: 30px;">{{n.contenido}}</p>
-		
-	</a>
-		</div> <br><br>
+		<a href="{% url 'noticias:detalle_noticia' n.pk %}">
+		<p><img src="{{n.imagen.url}}" width="150px"></p>
+		</a>
+		<a href="{% url 'noticias:detalle_noticia' n.pk %}">Ver mas</a>
+		<a href="{% url 'noticias:modificar_noticia' n.pk %}">Modificar</a>
+		<a href="{% url 'noticias:borrar_noticia' n.pk %}">Borrar</a>
+	</div><hr><hr>
 
 	{% endfor %}
 	<footer style="text-align: center; background-color: lightblue; margin: 20px;"><h3>Informatorio</h3></footer>

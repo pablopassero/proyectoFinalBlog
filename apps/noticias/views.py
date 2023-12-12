@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-from django.urls import reverse_lazy
+
 
 from .models import Noticia
 from .forms import Formulario_Noticia, Formulario_Modificar_Noticia
