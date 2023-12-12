@@ -1,9 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 from django.urls import reverse_lazy
 
 from .models import Noticia
-from .forms import Formulario_Noticia
+from .forms import Formulario_Noticia, Formulario_Modificar_Noticia
 
 # Create your views here.
 def Home_Noticias(request):
@@ -27,4 +28,21 @@ class Cargar_noticia(CreateView):
 	model = Noticia
 	template_name = 'noticias/cargar_noticia.html'
 	form_class = Formulario_Noticia
+	success_url = reverse_lazy('noticias:h_noticias')
+
+
+def Detalle_noticia(request, pk):
+	ctx = {}
+	n = Noticia.objects.get(pk = pk)
+	ctx['noticia'] = n
+	return render(request,'noticias/detalle_noticia.html', ctx)
+
+class Modificar_noticia(UpdateView):
+	model = Noticia
+	template_name = 'noticias/modificar_noticia.html'
+	form_class = Formulario_Modificar_Noticia
+	success_url = reverse_lazy('noticias:h_noticias')
+
+class Borrar_noticia(DeleteView):
+	model = Noticia
 	success_url = reverse_lazy('noticias:h_noticias')
